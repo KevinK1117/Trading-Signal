@@ -27,7 +27,7 @@ Zusätzlich zu den 5 technischen Indikatoren prüft die App 4 regelbasierte Pric
 
 
 ## Forex-only-Version
-XAUUSD und BTCUSD wurden aus der Auswahl und der API-Freigabeliste entfernt. Die Client-Abfrage erfolgt alle 15 Minuten; serverseitiges Caching ist auf 15 Minuten konfiguriert. API-Credits sind trotzdem abhängig von Twelve-Data-Abrechnung und Vercel-Cache-Verhalten.
+XAUUSD bleibt entfernt. BTCUSD und ETHUSD sind wieder auswählbar. Die Client-Abfrage erfolgt alle 15 Minuten; serverseitiges Caching ist auf 15 Minuten konfiguriert. API-Credits sind trotzdem abhängig von Twelve-Data-Abrechnung und Vercel-Cache-Verhalten.
 
 ## iPhone-App-Icon
 `app/apple-icon.png` (180×180) und `app/icon.png` (512×512) sind enthalten.
@@ -43,3 +43,11 @@ Teilen → Zum Home-Bildschirm hinzufügen installieren.
 - Kein Signal wird erfunden, wenn die Strategie keine Übereinstimmung findet.
 - Server-Fetch und Browser-Polling nutzen weiter stündliche Cache-Intervalle; Vercel-Cache ist nicht garantiert persistent.
 - Achtung: Forex-Marktdaten können Wochenend-Lücken enthalten; es werden keine künstlichen Kerzen eingefügt.
+
+
+## Neue Kryptomärkte
+BTCUSD (Bitcoin/USD) und ETHUSD (Ethereum/USD) sind zusätzlich auswählbar.
+Der API-Endpunkt verwendet bei Twelve Data die Symbole `BTC/USD` und `ETH/USD`.
+Die Verfügbarkeit hängt vom Twelve-Data-Tarif ab. Der API-Fehler wird angezeigt,
+wenn ein Symbol nicht unterstützt wird. Jede weitere Symbolabfrage kann Credits verbrauchen.
+`ETC` steht für Ethereum, nicht für Ether (`ETH`).
