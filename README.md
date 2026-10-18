@@ -35,3 +35,11 @@ XAUUSD und BTCUSD wurden aus der Auswahl und der API-Freigabeliste entfernt. Die
 Nach GitHub-Commit und erfolgreichem Vercel-Deployment das alte SignalDesk-Symbol
 vom Home-Bildschirm entfernen und die Website in Safari erneut über
 Teilen → Zum Home-Bildschirm hinzufügen installieren.
+
+## 1H-Daten und Chart-Level (Optimierung)
+- Server validiert OHLC, UTC-Stundenraster, Duplikate und ausschließlich abgeschlossene Stundenkerzen.
+- Der Chart verwendet nur sortierte, eindeutige, abgeschlossene 1H-Kerzen.
+- Bei aktivem Signal sind ENTRY (blau), SL (rot) und TP1–TP3 (grün) als beschriftete Preislinien sichtbar.
+- Kein Signal wird erfunden, wenn die Strategie keine Übereinstimmung findet.
+- Server-Fetch und Browser-Polling nutzen weiter stündliche Cache-Intervalle; Vercel-Cache ist nicht garantiert persistent.
+- Achtung: Forex-Marktdaten können Wochenend-Lücken enthalten; es werden keine künstlichen Kerzen eingefügt.
