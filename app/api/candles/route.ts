@@ -1,6 +1,6 @@
 import {NextRequest,NextResponse} from 'next/server';
 export const dynamic='force-dynamic';
-const symbols:Record<string,string>={EURUSD:'EUR/USD',GBPUSD:'GBP/USD',USDJPY:'USD/JPY',AUDUSD:'AUD/USD'};
+const symbols:Record<string,string>={EURUSD:'EUR/USD',GBPUSD:'GBP/USD',USDJPY:'USD/JPY',AUDUSD:'AUD/USD',BTCUSD:'BTC/USD',ETHUSD:'ETH/USD'};
 type Candle={time:number;open:number;high:number;low:number;close:number};
 export async function GET(req:NextRequest){
  const symbol=req.nextUrl.searchParams.get('symbol')||'EURUSD';
